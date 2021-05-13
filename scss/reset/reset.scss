@@ -1,0 +1,77 @@
+/*
+    Estilos generales para que las etiquetas no contengan propiedades
+    que nos estorben y en todos los navegadores se vean correctamente
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+img {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color:inherit;
+  font-size:inherit;
+}
+video {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+p a {
+  display: inline;
+}
+li {
+  list-style-type: none;
+}
+table , tr , td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , strong {
+  hyphens: auto;
+  font-weight: inherit;
+  font-size: inherit;
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form , input, textarea, select , button{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    // appearance: none;
+    display: block;
+  }
+
+body {
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: var(--blanco);
+  color:var(--negro);
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include flex( row , nowrap , center , center );
+}

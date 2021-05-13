@@ -1,0 +1,45 @@
+@mixin tfix(){
+	transform: perspective(1px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+@mixin flex( $a, $b, $c, $d ){
+	display			: flex;
+	flex-flow		  : $a $b;
+	justify-content	: $c;
+	@if $b == 'nowrap' {
+		align-items		: $d;	
+	}@else{
+		align-content	: $d;
+	}	
+}
+@mixin neo( $estado ,$br , $dis1 ){
+	color			: var(--negro);
+	transition		: all .4s ease;
+	border-radius 	: $br ;
+	
+	@if $estado == 1 {
+		background-color	: var(--blanco);
+		box-shadow			: 
+			$dis1    $dis1    $dis1*2 var(--sombra-ppal),
+			$dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec),
+			inset 0 0 0 transparent,
+			inset 0 0 0 transparent;
+	}@else if $estado == 2 {
+		background-color	: var(--blanco);
+		box-shadow			: 
+			0 0 0 transparent,
+			0 0 0 transparent,
+			inset $dis1    $dis1    $dis1*2 var(--sombra-ppal),
+			inset $dis1*-1 $dis1*-1 $dis1*2 var(--sombra-sec);
+	}
+    
+}
+@mixin grid ( $repetirC , $grosorC , $gap , $repetirR : initial, $grosorR : initial ){
+	display					: grid;
+	grid-template-columns	: repeat( $repetirC , $grosorC );
+	@if $repetirR != 'initial' {
+		grid-template-rows	: repeat( $repetirR , $grosorR );
+	}
+	gap: $gap ;
+}

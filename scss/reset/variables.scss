@@ -1,0 +1,33 @@
+/* Aquí definimos las Custom properties */
+:root{
+    --negro         : #393939;
+    --blanco        : #ececec;
+    --sombra-ppal   : #c9c9c9;
+    --sombra-sec    : #ffffff;
+    --borde-negro   : #00000050;
+
+    --marcado       : rgb(127, 195, 255);
+
+    /* Tipografía */
+    --tipo-principal  : Helvetica, Arial, sans-serif;
+}
+    
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+    :root{
+        --negro         : #ececec;
+        --blanco        : #303030;
+        --sombra-ppal   : #242424;
+        --sombra-sec    : #3c3c3c;
+
+        --borde-negro   : #FFFFFF50;
+    }
+}
+
+
+/* Configuramos si un usuario ha activado el modo alto contraste. (BETA) */
+// @media (prefers-contrast: high){
+//     :root{
+//         
+//     }
+// }
